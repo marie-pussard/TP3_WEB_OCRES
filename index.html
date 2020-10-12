@@ -18,21 +18,17 @@
       crossorigin="anonymous"
     ></script>
 
-    <script type="text/javascript">
-      function chargement(){
-        const nom = document.getElementById("city-input").value;
-        const data = getData("https://api.meteo.com").value;
-
-        nom.onchange=start();
+    <!--<script src="js/script.js">
+      function actualiser(){
+           
       }
-    </script>
-
+      </script>-->
     
     <!-- Axios -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
   </head>
-  <body>
+  <body onload="start()">
     <div
       class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm"
     >
@@ -48,9 +44,9 @@
 
     <div class="container">
       <div class="input-group mb-5 offset-4 col-4">
-        <input id="city-input" type="text" class="form-control" placeholder="Rentrer le nom d'une ville" onchange="chargement()" >
+        <input id="city-input" type="text" class="form-control" placeholder="Rentrer le nom d'une ville">
         <div class="input-group-append">
-          <button id="city-input-button" class="btn btn-success" type="submit">Actualiser</button>
+          <button id="city-input-button" class="btn btn-success" type="submit" onclick="start()">Actualiser</button>
         </div>
       </div>
     </div>
@@ -62,17 +58,18 @@
               <h4 class="my-0 font-weight-normal">Aujourd'hui</h4>
             </div>
             <div class="card-body">
-              <h2 id="today-forecast-main" class="card-title"> <!-- description de la météo (nuageux) -->
+              <h2 id="today-forecast-main" class="card-title"> <!-- description de la météo (ex: nuageux) -->
               </h2>
               <div>
-                <p id="today-forecast-more-info"></p> <!-- description plus détaillée (couverture nuageuse) -->
+                <p id="today-forecast-more-info"></p> <!-- description plus détaillée (ex: couverture nuageuse) -->
                 <div id="icon-weather-container" ></div> <!-- icone représentant la météo -->
                 <h3 id="today-forecast-temp"> </h3> <!-- température en °C -->
               </div>
               
-               <!-- <button type="button" class="btn btn-lg btn-block btn-primary " onclick='start()'>
+               <!-- <button type="button" class="btn btn-lg btn-block btn-primary btn-load-forecast " onclick='start()'>
                 Quel temps fait-il aujourd'hui ?
               </button> -->
+
             </div>
           </div>
         </div>
@@ -125,5 +122,7 @@
     </div>
     <script src="js/API_Weather.js"></script>
     <script src="js/script.js"></script>
+    
+
   </body>
 </html>
