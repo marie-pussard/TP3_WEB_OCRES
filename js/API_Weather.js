@@ -14,8 +14,8 @@ class API_WEATHER{
     if(city === undefined){
       city = "paris";
     }
-    this.city = document.getElementById('city-input').value;
-    console.log(this.city);
+    this.city = city;
+    console.log(city);
   }
 
   // Faire la requete à l'API openweathermap

@@ -19,16 +19,13 @@ function start() {
       const icon = apiWeather.getHTMLElementFromIcon(data.weather[0].icon);
 
       // Modifier le DOM
-      apiWeather.city = ville;
+      API_WEATHER.city = ville;
       document.getElementById('today-forecast-main').innerHTML = main;
       document.getElementById('today-forecast-more-info').innerHTML = description;
       document.getElementById('icon-weather-container').innerHTML = icon;
       document.getElementById('today-forecast-temp').innerHTML = `${temp}°C`;
 
-      console.log(ville);
-      console.log(apiWeather.city);
-      console.log(apiWeather);
-      
+      console.log(API_WEATHER.city);
     })
     .catch(function(error) {
       // Affiche une erreur
