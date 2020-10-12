@@ -20,7 +20,9 @@
 
     <script type="text/javascript">
       function chargement(){
-        const nom = document.getElementById("city-input");
+        const nom = document.getElementById("city-input").value;
+        const data = getData("https://api.meteo.com").value;
+
         nom.onchange=start();
       }
     </script>
@@ -60,12 +62,12 @@
               <h4 class="my-0 font-weight-normal">Aujourd'hui</h4>
             </div>
             <div class="card-body">
-              <h2 id="today-forecast-main" class="card-title">
+              <h2 id="today-forecast-main" class="card-title"> <!-- description de la météo (nuageux) -->
               </h2>
               <div>
-                <p id="today-forecast-more-info"></p>
-                <div id="icon-weather-container" ></div>
-                <h3 id="today-forecast-temp"> </h3>
+                <p id="today-forecast-more-info"></p> <!-- description plus détaillée (couverture nuageuse) -->
+                <div id="icon-weather-container" ></div> <!-- icone représentant la météo -->
+                <h3 id="today-forecast-temp"> </h3> <!-- température en °C -->
               </div>
               
                <!-- <button type="button" class="btn btn-lg btn-block btn-primary " onclick='start()'>
